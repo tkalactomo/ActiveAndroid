@@ -62,6 +62,12 @@ public abstract class Model {
 	public final Long getId() {
 		return mId;
 	}
+	
+	//Added possibility to set own id
+	//In my case when receiving data from server id is predefined
+	public final void setId(Long id) {
+		this.mId=id;
+	}
 
 	public final void delete() {
 		Cache.openDatabase().delete(mTableInfo.getTableName(), idName+"=?", new String[] { getId().toString() });
